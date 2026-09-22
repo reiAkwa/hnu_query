@@ -30,7 +30,7 @@ pub fn gym_response(json_str: &str) -> Result<Value, crate::Error<TokenExpired>>
                 "您已通过该学年的免测申请，无需参与测试",
                 json_str,
             ));
-        } else if status != -1 {
+        } else if status != 1 {
             return Err(parse_err("响应状态错误", json_str));
         }
     }
